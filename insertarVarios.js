@@ -3,14 +3,32 @@ var data = JSON.stringify({
     "collection": "Products",
     "database": "FakeStore",
     "dataSource": "ADSI2364482",
-    "projection": {
+    "documents": [
+        {
         
-    }
+            "id":225,
+            "title":"Gorra",
+            "price":22.5,
+            "description":"gorra azul"
+        },
+        {
+            "id":226,
+            "title":"Bufanda",
+            "price":35.5,
+            "description":"Bufanda tejida"
+        },
+        {
+            "id":227,
+            "title":"tapabocas",
+            "price":10.5,
+            "description":"tapabocas blancos"
+        }
+    ]
 });
             
 var config = {
     method: 'post',
-    url: 'https://data.mongodb-api.com/app/data-pfnpp/endpoint/data/v1/action/find',
+    url: 'https://data.mongodb-api.com/app/data-pfnpp/endpoint/data/v1/action/insertMany',
     headers: {
       'Content-Type': 'application/json',
       'Access-Control-Request-Headers': '*',

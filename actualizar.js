@@ -3,14 +3,17 @@ var data = JSON.stringify({
     "collection": "Products",
     "database": "FakeStore",
     "dataSource": "ADSI2364482",
-    "projection": {
-        
-    }
-});
+    "filter": {"id":23}, 
+    "update": {
+        "$set": {
+            "price":100.6,
+            "description":"gorra roja"
+        } } 
+    });
             
 var config = {
     method: 'post',
-    url: 'https://data.mongodb-api.com/app/data-pfnpp/endpoint/data/v1/action/find',
+    url: 'https://data.mongodb-api.com/app/data-pfnpp/endpoint/data/v1/action/updateOne',
     headers: {
       'Content-Type': 'application/json',
       'Access-Control-Request-Headers': '*',

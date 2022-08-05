@@ -3,14 +3,13 @@ var data = JSON.stringify({
     "collection": "Products",
     "database": "FakeStore",
     "dataSource": "ADSI2364482",
-    "projection": {
-        
-    }
-});
+    "filter": {"id":225}, 
+        } 
+    );
             
 var config = {
     method: 'post',
-    url: 'https://data.mongodb-api.com/app/data-pfnpp/endpoint/data/v1/action/find',
+    url: 'https://data.mongodb-api.com/app/data-pfnpp/endpoint/data/v1/action/deleteOne',
     headers: {
       'Content-Type': 'application/json',
       'Access-Control-Request-Headers': '*',
