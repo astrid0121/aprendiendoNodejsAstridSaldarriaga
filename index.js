@@ -4,12 +4,15 @@ servidor.iniciar();*/
 
 const express = require('express');
 const app = express();
+const calc = require ('./MiCalculadora')
 
 app.get("/", function(req,res){
     res.send("HOLA")
-    res.end();
+    console.log(calc.Sumar(7,2))
 })
 
 
 
-app.listen(7575);
+app.listen(9010, ()=>{
+    console.log("ejecutando")
+});
