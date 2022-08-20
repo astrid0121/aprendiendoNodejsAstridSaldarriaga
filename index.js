@@ -4,15 +4,30 @@ servidor.iniciar();*/
 
 const express = require('express');
 const app = express();
-const calc = require ('./MiCalculadora')
+const PORT = process.env.PORT || 9000;
+//const calc = require ('./MiCalculadora')
+const path = require('path');
+
+app.set('view engine','ejs')
+app.set('views',path.join(__dirname, '/views'));
+
+app.use(express.static('./public'));
 
 app.get("/", function(req,res){
-    res.send("HOLA")
-    console.log(calc.Sumar(7,2))
+    let user =['Astrid', 'Saldarriaga', 'Londoño']
+
+    var nombre = "usuario SENA"
+
+    
+    res.render('pages/index.ejs',
+    {name:nombre,
+     usuario:user
+    }
+    );
 })
 
-
-
-app.listen(9010, ()=>{
+app.listen(PORT, ()=>{
     console.log("ejecutando")
 });
+
+
